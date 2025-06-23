@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thalita | Agendamento de Consultas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Thalita</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav desktop-nav">
+                    <a href="#inicio" class="nav-link">Início</a>
+                    <a href="#agendamento" class="nav-link">Agendar</a>
+                    <a href="#localizacao" class="nav-link">Localização</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+
+                <!-- Desktop Actions -->
+                <div class="header-actions desktop-actions">
+                    <button class="btn btn-outline">Entrar</button>
+                    <button class="btn btn-primary">Cadastrar</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#inicio" class="nav-link">Início</a>
+                    <a href="#agendamento" class="nav-link">Agendar</a>
+                    <a href="#localizacao" class="nav-link">Localização</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+                <div class="mobile-actions">
+                    <button class="btn btn-outline btn-sm">Entrar</button>
+                    <button class="btn btn-primary btn-sm">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Cuidado de saúde ao seu alcance</h1>
+                    <p>Encontre e agende consultas com os melhores profissionais de saúde próximos a você. Rápido, fácil e seguro.</p>
+                    
+                    <!-- Search Box -->
+                    <div class="hero-search">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Buscar especialidade ou médico..." id="heroSearch">
+                        </div>
+                        <button class="btn btn-primary btn-lg" id="heroSearchBtn">Buscar</button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Médicos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Especialidades</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10k+</div>
+                            <div class="stat-label">Consultas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="/placeholder.svg?height=500&width=600" alt="Profissionais de saúde">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheduling Section -->
+    <section id="agendamento" class="scheduling">
+        <div class="container">
+            <div class="section-header">
+                <h2>Agende sua consulta</h2>
+                <p>Escolha a especialidade, data e horário que melhor se adequa à sua agenda</p>
+            </div>
+
+            <div class="scheduling-container">
+                <!-- Specialty Selection -->
+                <div class="specialty-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-heartbeat"></i> Escolha a especialidade</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="specialty-grid" id="specialtyGrid">
+                                <div class="specialty-card" data-specialty="cardiologia">
+                                    <div class="specialty-icon bg-red">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <span>Cardiologia</span>
+                                </div>
+                                <div class="specialty-card" data-specialty="dermatologia">
+                                    <div class="specialty-icon bg-pink">
+                                        <i class="fas fa-hand-holding-medical"></i>
+                                    </div>
+                                    <span>Dermatologia</span>
+                                </div>
+                                <div class="specialty-card" data-specialty="pediatria">
+                                    <div class="specialty-icon bg-blue">
+                                        <i class="fas fa-baby"></i>
+                                    </div>
+                                    <span>Pediatria</span>
+                                </div>
+                                <div class="specialty-card" data-specialty="ortopedia">
+                                    <div class="specialty-icon bg-orange">
+                                        <i class="fas fa-bone"></i>
+                                    </div>
+                                    <span>Ortopedia</span>
+                                </div>
+                                <div class="specialty-card" data-specialty="ginecologia">
+                                    <div class="specialty-icon bg-purple">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <span>Ginecologia</span>
+                                </div>
+                                <div class="specialty-card" data-specialty="neurologia">
+                                    <div class="specialty-icon bg-green">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <span>Neurologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar and Time Selection -->
+                    <div class="date-time-grid">
+                        <!-- Calendar -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-calendar"></i> Selecione a data</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="calendar" id="calendar">
+                                    <div class="calendar-header">
+                                        <button class="btn btn-outline btn-sm" id="prevMonth">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <h4 id="currentMonth">Janeiro 2025</h4>
+                                        <button class="btn btn-outline btn-sm" id="nextMonth">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="calendar-grid" id="calendarGrid">
+                                        <!-- Calendar days will be generated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Time Slots -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-clock"></i> Horários disponíveis</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="time-slots" id="timeSlots">
+                                    <button class="time-slot" data-time="08:00">08:00</button>
+                                    <button class="time-slot" data-time="09:00">09:00</button>
+                                    <button class="time-slot" data-time="10:00">10:00</button>
+                                    <button class="time-slot" data-time="11:00">11:00</button>
+                                    <button class="time-slot" data-time="14:00">14:00</button>
+                                    <button class="time-slot" data-time="15:00">15:00</button>
+                                    <button class="time-slot" data-time="16:00">16:00</button>
+                                    <button class="time-slot" data-time="17:00">17:00</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Summary -->
+                <div class="card booking-summary">
+                    <div class="card-header">
+                        <h3><i class="fas fa-check-circle"></i> Resumo do agendamento</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <span class="label">Especialidade:</span>
+                                <span class="value" id="selectedSpecialty">Selecione uma especialidade</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Data:</span>
+                                <span class="value" id="selectedDate">Selecione uma data</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Horário:</span>
+                                <span class="value" id="selectedTime">Selecione um horário</span>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="summary-item">
+                                <span class="label">Valor:</span>
+                                <span class="value price">R$ 150,00</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-full" id="confirmBooking" disabled>
+                            Confirmar agendamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao" class="location">
+        <div class="container">
+            <div class="section-header">
+                <h2>Encontre clínicas próximas</h2>
+                <p>Use sua localização para encontrar os melhores profissionais perto de você</p>
+            </div>
+
+            <!-- Location Controls -->
+            <div class="location-controls">
+                <button class="btn btn-primary btn-lg" id="getLocationBtn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Usar minha localização
+                </button>
+                <div class="search-location">
+                    <input type="text" placeholder="Digite seu endereço..." id="addressInput">
+                    <button class="btn btn-outline" id="searchAddressBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="location-content">
+                <!-- Clinics List -->
+                <div class="clinics-section">
+                    <h3>Clínicas próximas</h3>
+                    <div class="clinics-list" id="clinicsList">
+                        <div class="clinic-card" data-clinic="1">
+                            <div class="clinic-info">
+                                <h4>Hospital São Lucas</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro</p>
+                                <div class="clinic-details">
+                                    <span><i class="fas fa-star"></i> 4.8 (234 avaliações)</span>
+                                    <span><i class="fas fa-clock"></i> Aberto até 22:00</span>
+                                </div>
+                                <div class="clinic-specialties">
+                                    <span class="badge">Cardiologia</span>
+                                    <span class="badge">Neurologia</span>
+                                    <span class="badge">Ortopedia</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <div class="badge badge-secondary">1.2 km</div>
+                                <button class="btn btn-outline btn-sm clinic-select">Selecionar</button>
+                            </div>
+                        </div>
+
+                        <div class="clinic-card" data-clinic="2">
+                            <div class="clinic-info">
+                                <h4>Clínica MedCenter</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 456 - Bela Vista</p>
+                                <div class="clinic-details">
+                                    <span><i class="fas fa-star"></i> 4.6 (189 avaliações)</span>
+                                    <span><i class="fas fa-clock"></i> Aberto até 20:00</span>
+                                </div>
+                                <div class="clinic-specialties">
+                                    <span class="badge">Dermatologia</span>
+                                    <span class="badge">Pediatria</span>
+                                    <span class="badge">Ginecologia</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <div class="badge badge-secondary">2.1 km</div>
+                                <button class="btn btn-outline btn-sm clinic-select">Selecionar</button>
+                            </div>
+                        </div>
+
+                        <div class="clinic-card" data-clinic="3">
+                            <div class="clinic-info">
+                                <h4>Centro Médico Vida</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Rua Augusta, 789 - Consolação</p>
+                                <div class="clinic-details">
+                                    <span><i class="fas fa-star"></i> 4.7 (156 avaliações)</span>
+                                    <span><i class="fas fa-clock"></i> Aberto até 18:00</span>
+                                </div>
+                                <div class="clinic-specialties">
+                                    <span class="badge">Cardiologia</span>
+                                    <span class="badge">Dermatologia</span>
+                                    <span class="badge">Neurologia</span>
+                                </div>
+                            </div>
+                            <div class="clinic-actions">
+                                <div class="badge badge-secondary">0.8 km</div>
+                                <button class="btn btn-outline btn-sm clinic-select">Selecionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="card map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-building"></i>
+                        <p>Mapa interativo</p>
+                        <small>Visualize as clínicas próximas em um mapa interativo</small>
+                        <div class="location-status" id="locationStatus"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Thalita</span>
+                    </div>
+                    <p>Conectando você aos melhores profissionais de saúde com tecnologia e cuidado.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Agendamento</a></li>
+                        <li><a href="#">Telemedicina</a></li>
+                        <li><a href="#">Exames</a></li>
+                        <li><a href="#">Emergência</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (11) 3000-0000</p>
+                        <p><i class="fas fa-envelope"></i> contato@thalita.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Thalita. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
